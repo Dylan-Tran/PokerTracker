@@ -1,0 +1,25 @@
+{
+  "name": "pokertracker",
+  "version": "1.0.0",
+  "description": "For my friends and I",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dylan-Tran/PokerTracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dylan-Tran/PokerTracker/issues"
+  },
+  "homepage": "https://github.com/Dylan-Tran/PokerTracker#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "googleapis": "^39.2.0",
+    "mongoose": "^5.7.8"
+  }
+}
