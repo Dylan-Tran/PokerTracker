@@ -2,7 +2,14 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-//await mongoose.connect('mongo')
+
+//database connection
+const databaseConnectionString = require(__dirname + '/config/databaseInfo.js');
+mongoose.connect(databaseConnectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}); 
+//database can be access using mongoose.connection
 
 var app = express();
 

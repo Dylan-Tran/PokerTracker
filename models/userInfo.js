@@ -8,8 +8,9 @@ const userInfo = new mongoose.Schema({
 })
 
 userInfo.pre("save", (next)=>{
-    const info = this;
-
-
+    const hashTool = crypto.createHash('sha256');
+    hashTool.update(this.password);
+     
+    this.password = hashTool.digest('encoding');
     next();
 })
