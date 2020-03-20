@@ -3,11 +3,14 @@ var routes = express.Router();
 var path = require('path');
 
 routes.get('/',(req, res)=>{
-    res.sendFile(path.join(__dirname,'../views/index.html'));
+    res.render('index');
 })
 
 routes.get('/signIn',(req, res)=>{
-    res.sendFile(path.join(__dirname,'../views/signIn.html'));
+    res.render('signIn');
 })
  
+routes.get('/signUp',(req, res)=>{
+    res.render('signUp');
+})
 module.exports = routes;

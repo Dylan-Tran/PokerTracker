@@ -5,11 +5,23 @@ const mongoose = require('mongoose');
 
 //database connection
 const databaseConnectionString = require(__dirname + '/config/databaseInfo.js');
-mongoose.connect(databaseConnectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}); 
+
+try{
+    mongoose.connect(databaseConnectionString, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+} catch(error){
+    console.log(error);
+}
 //database can be access using mongoose.connection
+let db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+
+db.on('open', ()=>{
+    console.log("Connection Successful!");
+})
 
 var app = express();
 
